@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo de Plantas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function salvar(){
+            let form= document.getElementById("cadastro")
+            let nome= form.nomeDaPlanta.value
+            let especie= form.especie.value
+            if(nome.trim() == ""){
+                alert("Preencha o nome da planta")
+                return false
+            }
+            if(especie.trim() == ""){
+                alert("Preencha a especie da planta")
+                return false
+            }
+            alert("Cadastrado realizado com sucesso")
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="images/flores.jpg" alt="muitas flores coloridas em um campo">
+    </header>
+    <form id="cadastro" onsubmit="return false">
+        <div class="linha">
+            <label>Nome da planta</label>
+            <input type="text" name="nomeDaPlanta">
+        </div>
+        <div class="linha">
+            <label>Especie</label>
+            <input type="text" name="especie">
+        </div>
+        <div class="linha">
+            <label>Altura máxima</label>
+            <input type="number" name="altura" placeholder="Opicional">
+        </div>
+        <input type="submit" name="enviar" value="Cadastrar" onclick="salvar()">
+    </form>
+    
+</body>
+</html>
